@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## To deploy to Github page
+
+Please check [Angular - Deploy to GitHub Pages](https://angular.io/guide/deployment#deploy-to-github-pages)
+
+1. Run this command to build the application
+
+    `ng build --output-path docs --base-href https://danielbkang.github.io/yeswecandrivingschool/`
+
+2. If `index.html` is not directly under docs folder, move all the contents with `index.html` right under the docs folder.
+
+    For example, `docs > browser > index.html (w other files)`, then `docs > index.html (w other files)`
+
+3. make a copy of `docs/index.html` and name it `docs/404.html`.
