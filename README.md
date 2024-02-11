@@ -32,7 +32,7 @@ Please check [Angular - Deploy to GitHub Pages](https://angular.io/guide/deploym
 
 1. Run this command to build the application
 
-    `ng build --output-path docs --base-href https://danielbkang.github.io/yeswecandrivingschool/`
+    `ng build --output-path docs --base-href https://yeswecandrivingschool.ca/`
 
 2. If `index.html` is not directly under docs folder, move all the contents with `index.html` right under the docs folder.
 
