@@ -1,7 +1,31 @@
+:host {
+  --primary-green: #2fb457;
+}
+
 .logo-container {
-    display: flex;
+  display: flex;
 }
 
 .logo-container .logo {
-    padding: 0 10px;
+  padding: 0 16px;
+}
+
+.divider {
+  width: 2px;
+  background: var(--primary-green);
+  margin-inline: 0.5rem;
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    flex-direction: column;
+    width: max-content;
+  }
+
+  .divider {
+    height: 2px;
+    width: 100%;
+    background: var(--primary-green);
+    margin-block: 1.5rem;
+  }
 }
