@@ -1,0 +1,7 @@
+.logo-container {
+    display: flex;
+}
+
+.logo-container .logo {
+    padding: 0 10px;
+}
