@@ -1,3 +1,7 @@
+.footer {
+  padding: 16px;
+}
+
 .footer .social-links {
   display: flex;
   align-items: center;
@@ -14,6 +18,6 @@
   fill: var(--gray-900);
 }
 
-.footer .social-link-title-container {
+.footer .title-container {
   padding-top: 32px;
 }

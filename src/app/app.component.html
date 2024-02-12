@@ -92,12 +92,6 @@
     margin-top: 1.5rem;
   }
 
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
   .pill-group {
     display: flex;
     flex-direction: column;
@@ -145,20 +139,6 @@
   .pill-group svg {
     margin-inline-start: 0.25rem;
   }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
 </style>
 
 <main class="main">
@@ -196,11 +176,14 @@
       </div>
 
       <h1>{{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <p>
+        Empowering journeys, mastering roads: where every drive is a success
+        story.
+      </p>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
-      <div class="pill-group">
+      <!-- <div class="pill-group">
         @for (item of [ { title: 'Explore the Docs', link: 'https://angular.dev'
         }, { title: 'Learn with Tutorials', link:
         'https://angular.dev/tutorials' }, { title: 'CLI Docs', link:
@@ -223,7 +206,7 @@
           </svg>
         </a>
         }
-      </div>
+      </div> -->
       <app-footer />
     </div>
   </div>
