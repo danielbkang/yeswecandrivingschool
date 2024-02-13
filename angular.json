@@ -4,12 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "yes-we-can-driving-school-angular": {
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "ko-KR": "src/locale/messages.ko.xlf"
-        }
-      },
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -19,9 +13,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": [
-              "ko-KR"
-            ],
             "outputPath": "dist/yes-we-can-driving-school-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
