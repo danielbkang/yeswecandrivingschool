@@ -1,14 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import {
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatIconModule, FooterComponent],
+  imports: [
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    MatIconModule,
+    HeaderComponent,
+    HomeComponent,
+    FooterComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'Yes We Can Driving School';
-}
+export class AppComponent {}

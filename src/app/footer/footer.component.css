@@ -1,5 +1,8 @@
 .footer {
   padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .footer .available-service-region mat-list {
@@ -41,4 +44,11 @@
     flex-direction: column;
     align-items: left;
   }
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: var(--primary-green);
+  margin-block: 1.5rem;
 }
