@@ -1,0 +1,9 @@
+@media screen and (min-width: 900px) {
+  .pricing-section {
+    width: 900px;
+  }
+}
+
+.pricing-section .container {
+  margin: 64px 0;
+}
