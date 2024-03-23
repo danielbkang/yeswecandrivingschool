@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,4 +10,10 @@ import { MatListModule } from '@angular/material/list';
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })
-export class FooterComponent {}
+export class FooterComponent {
+  constructor(private translationService: TranslationService) {}
+
+  getTranslation(key: string): string {
+    return this.translationService.getTranslation(key);
+  }
+}
