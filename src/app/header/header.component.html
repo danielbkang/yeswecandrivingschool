@@ -44,20 +44,25 @@
           }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="switchLanguage('en')">English</a> |
-          <a class="nav-link" (click)="switchLanguage('ko')">한국어</a>
+          <a class="nav-link language-link" (click)="switchLanguage('en')">English</a> |
+          <a class="nav-link language-link" (click)="switchLanguage('ko')">한국어</a>
         </li>
       </ul>
     </div>
 
     <div class="mobile navbar-nav" i18n>
+      <div class="language-container">
+        <a class="nav-link language-link" (click)="switchLanguage('en')">English</a> |
+        <a class="nav-link language-link" (click)="switchLanguage('ko')">한국어</a>
+      </div>
+
       <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
       <mat-menu #menu="matMenu" xPosition="before">
         <button mat-menu-item routerLink="/about">
-          <span>About</span>
+          <span>{{ getTranslation("about") }}</span>
         </button>
         <button mat-menu-item routerLink="/pricing">
-          <span>Pricing</span>
+          <span>{{ getTranslation("pricing") }}</span>
         </button>
       </mat-menu>
     </div>

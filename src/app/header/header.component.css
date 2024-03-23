@@ -40,6 +40,10 @@
   margin-left: 32px;
 }
 
+.language-link {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 651px) {
   .header .mobile {
     display: none;
@@ -58,4 +62,8 @@
 
 .mobile.navbar-nav {
   list-style: none;
+}
+
+.mobile .language-container {
+  padding-right: 24px;
 }
