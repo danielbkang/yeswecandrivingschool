@@ -1,29 +1,24 @@
 <section class="pricing-section">
   <div class="container">
-    <h2>Our Pricing</h2>
+    <h2 i18n>{{ getTranslation("pricing-title") }}</h2>
     <div class="pricing-card">
-      <h3>Standard Lesson</h3>
-      <p>Minimum duration: 1.5 hours</p>
-      <p>Price: $80 CAD / 1 hr</p>
-      <p>
-        *Additional charges may apply for areas outside our supported region
-      </p>
+      <h3 i18n>{{ getTranslation("standard-lesson") }}</h3>
+      <p i18n>{{ getTranslation("lesson-minimum-hour") }}</p>
+      <p i18n>{{ getTranslation("lesson-price") }}</p>
+      <p i18n>*{{ getTranslation("additional-charge") }}</p>
     </div>
     <div class="container additional-info">
-      <h4>Additional Information:</h4>
+      <h4>{{ getTranslation("additional-info-title") }}:</h4>
       <ul>
         <li>
-          Our standard lesson duration is 1.5 hours to ensure effective
-          learning.
+          {{ getTranslation("pricing-standard-lesson-duration") }}
         </li>
-        <li>Each lesson is priced at $80 CAD per hour.</li>
+        <li>{{ getTranslation("pricing-lesson-price") }}</li>
         <li>
-          If you are located outside our supported area, additional charges may
-          apply.
+          {{ getTranslation("pricing-additional-charges") }}
         </li>
         <li>
-          We value your time and aim to provide efficient and productive
-          lessons.
+          {{ getTranslation("pricing-value-your-time") }}
         </li>
       </ul>
     </div>

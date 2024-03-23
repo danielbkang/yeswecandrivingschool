@@ -5,6 +5,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-header',
@@ -20,4 +21,18 @@ import { RouterModule } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  constructor(private translationService: TranslationService) {}
+
+  ngOnInit() {
+    this.translationService.setLanguage('ko');
+  }
+
+  switchLanguage(language: string): void {
+    this.translationService.setLanguage(language);
+  }
+
+  getTranslation(key: string): string {
+    return this.translationService.getTranslation(key);
+  }
+}

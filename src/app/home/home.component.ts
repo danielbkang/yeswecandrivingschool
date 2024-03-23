@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { HeaderComponent } from '../header/header.component';
+import { TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-home',
@@ -11,4 +12,10 @@ import { HeaderComponent } from '../header/header.component';
 })
 export class HomeComponent {
   title = 'Yes We Can Driving School';
+
+  constructor(private translationService: TranslationService) {}
+
+  getTranslation(key: string): string {
+    return this.translationService.getTranslation(key);
+  }
 }

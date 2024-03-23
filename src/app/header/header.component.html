@@ -34,10 +34,18 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" i18n>About</a>
+          <a class="nav-link" routerLink="/about" i18n>{{
+            getTranslation("about")
+          }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/pricing" i18n>Pricing</a>
+          <a class="nav-link" routerLink="/pricing" i18n>{{
+            getTranslation("pricing")
+          }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="switchLanguage('en')">English</a> |
+          <a class="nav-link" (click)="switchLanguage('ko')">한국어</a>
         </li>
       </ul>
     </div>
@@ -53,6 +61,5 @@
         </button>
       </mat-menu>
     </div>
-
   </div>
 </header>
