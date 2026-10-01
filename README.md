@@ -30,12 +30,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Please check [Angular - Deploy to GitHub Pages](https://angular.io/guide/deployment#deploy-to-github-pages)
 
-1. Run this command to build the application
+### Quick One-Command Build
+Run this single command:
+```bash
+npm run build:ghpages
+```
+This automatically runs `ng build --output-path docs --base-href https://yeswecandrivingschool.ca/`, moves `browser/` files to the root of `docs/`, generates `docs/404.html`, and verifies `CNAME`.
 
-    `ng build --output-path docs --base-href https://yeswecandrivingschool.ca/`
-
-2. If `index.html` is not directly under docs folder, move all the contents with `index.html` right under the docs folder.
-
-    For example, `docs > browser > index.html (w other files)`, then `docs > index.html (w other files)`
-
-3. make a copy of `docs/index.html` and name it `docs/404.html`.
+### Manual Steps (Alternative)
+- Run `ng build --output-path docs --base-href https://yeswecandrivingschool.ca/`
+- If `index.html` is under `docs/browser`, move all files directly under `docs/`.
+- Make a copy of `docs/index.html` and name it `docs/404.html`.

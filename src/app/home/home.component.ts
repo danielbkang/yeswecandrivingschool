@@ -1,20 +1,49 @@
-import { Component } from '@angular/core';
-import { MatListModule } from '@angular/material/list';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatListModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  title = 'Yes We Can Driving School';
+  openFaqIndex = signal<number | null>(0);
 
-  constructor(private translationService: TranslationService) { }
+  constructor(public translationService: TranslationService) {}
+
+  toggleFaq(index: number): void {
+    this.openFaqIndex.update((curr) => (curr === index ? null : index));
+  }
+
+  isFaqOpen(index: number): boolean {
+    return this.openFaqIndex() === index;
+  }
 
   getTranslation(key: string): string {
     return this.translationService.getTranslation(key);
+  }
+
+  getList(key: string): string[] {
+    return this.translationService.getList(key);
+  }
+
+  scrollTo(sectionId: string): void {
+    if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+        const offsetPosition = elementPosition + currentScroll - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth',
+        });
+      }
+    }
   }
 }

@@ -1,70 +1,626 @@
-<div class="content">
-  <div class="left-side">
-    <h1 i18n>{{ title }}</h1>
-    <p i18n>
-      {{ getTranslation("page-intro") }}
-    </p>
-  </div>
-  <div class="divider" role="separator" aria-label="Divider"></div>
-  <div class="right-side">
-    <div class="available-service-region-container">
-      <div class="title-container">
-        <h2 i18n>{{ getTranslation("available-service-region") }}</h2>
+<div class="home-page">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="site-container hero-container">
+      <div class="hero-content">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>{{ getTranslation('hero-badge') }}</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-line">{{ getTranslation('hero-title-prefix') }}</span>
+          <span class="title-highlight">{{ getTranslation('hero-title-highlight') }}</span>
+          <span class="title-line">{{ getTranslation('hero-title-suffix') }}</span>
+        </h1>
+
+        <p class="hero-description">
+          {{ getTranslation('hero-subtitle') }}
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="tel:16048167070" class="btn-primary hero-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445Z"/>
+            </svg>
+            <span>{{ getTranslation('hero-cta-call') }}</span>
+          </a>
+
+          <a href="https://open.kakao.com/o/sTwi0T4f" target="_blank" rel="noopener" class="btn-kakao hero-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.828 1.83 5.308 4.606 6.745-.203.743-.733 2.695-.839 3.109-.131.512.188.505.396.367.164-.109 2.59-1.745 3.633-2.457.712.104 1.447.16 2.204.16 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
+            </svg>
+            <span>{{ getTranslation('hero-cta-kakao') }}</span>
+          </a>
+
+          <button type="button" (click)="scrollTo('pricing')" class="btn-secondary hero-btn">
+            <span>{{ getTranslation('hero-cta-pricing') }}</span>
+          </button>
+        </div>
+
+        <div class="hero-quick-features">
+          <div class="quick-feature-item">
+            <span class="check-icon">✓</span>
+            <span>Port Coquitlam ICBC</span>
+          </div>
+          <div class="quick-feature-item">
+            <span class="check-icon">✓</span>
+            <span>Class 5 & 7 Road Test</span>
+          </div>
+          <div class="quick-feature-item">
+            <span class="check-icon">✓</span>
+            <span>Dual-Brake Safety</span>
+          </div>
+        </div>
       </div>
-      <div class="available-service-region">
-        <mat-list class="list" role="list">
-          <mat-list-item role="listitem"
-            >Coquitlam (Tri-Cities area)</mat-list-item
-          >
-          <mat-list-item role="listitem">Burnaby</mat-list-item>
-          <mat-list-item role="listitem">New Westminster</mat-list-item>
-          <mat-list-item role="listitem">Surrey</mat-list-item>
-          <mat-list-item role="listitem">Langley</mat-list-item>
-        </mat-list>
+
+      <!-- Hero Visual Card -->
+      <div class="hero-visual-card">
+        <div class="visual-card-inner">
+          <div class="visual-badge">
+            <svg width="28" height="28" viewBox="0 0 21 21" fill="none" class="badge-logo">
+              <circle cx="10.6821" cy="10.5586" r="9.81396" fill="#2FB457" />
+              <path d="M2.93555 3.65771H6.89383L10.7052 10.8561H10.8684L14.6798 3.65771H18.6381L12.5415 14.4634V20.3723H9.03212V14.4634L2.93555 3.65771Z" fill="white" />
+            </svg>
+            <span class="badge-text">ICBC Certified School</span>
+          </div>
+
+          <div class="visual-main-icon">
+            <div class="steering-wheel-graphic">
+              <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" stroke="#2FB457"/>
+                <circle cx="12" cy="12" r="3" stroke="#2FB457"/>
+                <path d="M12 2v7M2 12h7M15 12h7M12 15v7" stroke="#2FB457"/>
+              </svg>
+            </div>
+          </div>
+
+          <h3 class="visual-card-title">{{ getTranslation('brand-name') }}</h3>
+          <p class="visual-card-tagline">{{ getTranslation('footer-tagline') }}</p>
+
+          <div class="visual-stats-row">
+            <div class="v-stat">
+              <span class="v-stat-val">1:1</span>
+              <span class="v-stat-label">Personalized</span>
+            </div>
+            <div class="v-stat-divider"></div>
+            <div class="v-stat">
+              <span class="v-stat-val">100%</span>
+              <span class="v-stat-label">Bilingual</span>
+            </div>
+            <div class="v-stat-divider"></div>
+            <div class="v-stat">
+              <span class="v-stat-val">Safety</span>
+              <span class="v-stat-label">Dual Brake</span>
+            </div>
+          </div>
+
+          <div class="visual-direct-contact">
+            <span class="direct-phone-label">Direct Line / 고객 상담 센터</span>
+            <a href="tel:16048167070" class="direct-phone-num">+1 604-816-7070</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="social-links-container">
-      <div class="title-container">
-        <h2 i18n>{{ getTranslation("contactus") }}</h2>
+  </section>
+
+  <!-- Trust Highlights Grid -->
+  <section class="trust-section">
+    <div class="site-container">
+      <div class="trust-grid">
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <span class="trust-icon">🛡️</span>
+          </div>
+          <h3 class="trust-card-title">{{ getTranslation('trust-badge-1-title') }}</h3>
+          <p class="trust-card-desc">{{ getTranslation('trust-badge-1-desc') }}</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <span class="trust-icon">🗣️</span>
+          </div>
+          <h3 class="trust-card-title">{{ getTranslation('trust-badge-2-title') }}</h3>
+          <p class="trust-card-desc">{{ getTranslation('trust-badge-2-desc') }}</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <span class="trust-icon">🚗</span>
+          </div>
+          <h3 class="trust-card-title">{{ getTranslation('trust-badge-3-title') }}</h3>
+          <p class="trust-card-desc">{{ getTranslation('trust-badge-3-desc') }}</p>
+        </div>
+
+        <div class="trust-card">
+          <div class="trust-icon-box">
+            <span class="trust-icon">🎯</span>
+          </div>
+          <h3 class="trust-card-title">{{ getTranslation('trust-badge-4-title') }}</h3>
+          <p class="trust-card-desc">{{ getTranslation('trust-badge-4-desc') }}</p>
+        </div>
       </div>
-      <div class="social-links">
-        <a href="tel:16048167070">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#000000"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445Z"
-            />
-          </svg>
-          <p i18n>+1 604-816-7070</p>
-        </a>
+    </div>
+  </section>
+
+  <!-- Professional Team & Teaching Standards Section -->
+  <section id="about" class="instructor-section">
+    <div class="site-container">
+      <div class="instructor-grid">
+        <div class="instructor-info">
+          <div class="section-badge">
+            <span class="badge-dot"></span>
+            <span>{{ getTranslation('instructor-badge') }}</span>
+          </div>
+          <h2 class="section-title text-left">{{ getTranslation('instructor-title') }}</h2>
+          <p class="instructor-text">{{ getTranslation('instructor-p1') }}</p>
+          <p class="instructor-text">{{ getTranslation('instructor-p2') }}</p>
+
+          <div class="instructor-stats-grid">
+            <div class="stat-card">
+              <span class="stat-number">{{ getTranslation('instructor-stat1-num') }}</span>
+              <span class="stat-label">{{ getTranslation('instructor-stat1-label') }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">{{ getTranslation('instructor-stat2-num') }}</span>
+              <span class="stat-label">{{ getTranslation('instructor-stat2-label') }}</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">{{ getTranslation('instructor-stat3-num') }}</span>
+              <span class="stat-label">{{ getTranslation('instructor-stat3-label') }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="instructor-quote-card">
+          <div class="standards-card-header">
+            <span class="standards-badge">Standard of Excellence</span>
+            <h3 class="standards-title">예스위캔 3대 교육 원칙</h3>
+          </div>
+          <div class="standards-list">
+            <div class="standard-item">
+              <span class="s-icon">🛡️</span>
+              <div>
+                <strong>안전 최우선 방어 운전</strong>
+                <p>보조 브레이크 장착 및 위험 요소 선제적 인지 훈련</p>
+              </div>
+            </div>
+            <div class="standard-item">
+              <span class="s-icon">🎯</span>
+              <div>
+                <strong>ICBC 최신 코스 집중 트레이닝</strong>
+                <p>포트 코퀴틀람 시험 코스 교차로 및 주차 완전 정복</p>
+              </div>
+            </div>
+            <div class="standard-item">
+              <span class="s-icon">🤝</span>
+              <div>
+                <strong>인내심과 존중의 1:1 코칭</strong>
+                <p>긴장하지 않는 편안한 분위기에서 실력 극대화</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training Programs & Courses Section -->
+  <section id="courses" class="courses-section">
+    <div class="site-container">
+      <div class="text-center">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>{{ getTranslation('courses-badge') }}</span>
+        </div>
+        <h2 class="section-title">{{ getTranslation('courses-title') }}</h2>
+        <p class="section-subtitle">{{ getTranslation('courses-subtitle') }}</p>
+      </div>
+
+      <div class="courses-grid">
+        <!-- Course 1: Class 7 (N) -->
+        <div class="course-card">
+          <div class="course-header">
+            <span class="course-tag">{{ getTranslation('course1-tag') }}</span>
+            <h3 class="course-title">{{ getTranslation('course1-title') }}</h3>
+          </div>
+          <p class="course-desc">{{ getTranslation('course1-desc') }}</p>
+          <ul class="course-points">
+            @for (point of getList('course1-points'); track point) {
+              <li><span class="check-bullet">✓</span> {{ point }}</li>
+            }
+          </ul>
+        </div>
+
+        <!-- Course 2: Class 5 -->
+        <div class="course-card featured">
+          <div class="featured-ribbon">Most Popular</div>
+          <div class="course-header">
+            <span class="course-tag highlighted">{{ getTranslation('course2-tag') }}</span>
+            <h3 class="course-title">{{ getTranslation('course2-title') }}</h3>
+          </div>
+          <p class="course-desc">{{ getTranslation('course2-desc') }}</p>
+          <ul class="course-points">
+            @for (point of getList('course2-points'); track point) {
+              <li><span class="check-bullet">✓</span> {{ point }}</li>
+            }
+          </ul>
+        </div>
+
+        <!-- Course 3: Mock Test & Car Rental -->
+        <div class="course-card">
+          <div class="course-header">
+            <span class="course-tag">{{ getTranslation('course3-tag') }}</span>
+            <h3 class="course-title">{{ getTranslation('course3-title') }}</h3>
+          </div>
+          <p class="course-desc">{{ getTranslation('course3-desc') }}</p>
+          <ul class="course-points">
+            @for (point of getList('course3-points'); track point) {
+              <li><span class="check-bullet">✓</span> {{ point }}</li>
+            }
+          </ul>
+        </div>
+
+        <!-- Course 4: Refresher -->
+        <div class="course-card">
+          <div class="course-header">
+            <span class="course-tag">{{ getTranslation('course4-tag') }}</span>
+            <h3 class="course-title">{{ getTranslation('course4-title') }}</h3>
+          </div>
+          <p class="course-desc">{{ getTranslation('course4-desc') }}</p>
+          <ul class="course-points">
+            @for (point of getList('course4-points'); track point) {
+              <li><span class="check-bullet">✓</span> {{ point }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Regions Section -->
+  <section id="regions" class="regions-section">
+    <div class="site-container">
+      <div class="text-center">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>{{ getTranslation('region-badge') }}</span>
+        </div>
+        <h2 class="section-title">{{ getTranslation('region-title') }}</h2>
+        <p class="section-subtitle">{{ getTranslation('region-subtitle') }}</p>
+      </div>
+
+      <div class="regions-grid">
+        <!-- Tri-Cities Hub Card -->
+        <div class="region-card primary-hub">
+          <div class="hub-header">
+            <span class="hub-icon">📍</span>
+            <div>
+              <h3 class="hub-title">{{ getTranslation('region-hub-title') }}</h3>
+              <p class="hub-desc">{{ getTranslation('region-hub-desc') }}</p>
+            </div>
+          </div>
+          <div class="region-pills">
+            <span class="region-pill active">🏙️ {{ getTranslation('region-list-coquitlam') }}</span>
+            <span class="region-pill active">🚗 {{ getTranslation('region-list-poco') }}</span>
+            <span class="region-pill active">🌲 {{ getTranslation('region-list-portmoody') }}</span>
+          </div>
+        </div>
+
+        <!-- Adjacent Areas Card -->
+        <div class="region-card secondary-hub">
+          <div class="hub-header">
+            <span class="hub-icon">🗺️</span>
+            <div>
+              <h3 class="hub-title">{{ getTranslation('region-sub-title') }}</h3>
+              <p class="hub-desc">메트로 밴쿠버 주요 인근 지역 사전 예약 연수</p>
+            </div>
+          </div>
+          <div class="region-pills">
+            <span class="region-pill">🏢 {{ getTranslation('region-list-burnaby') }}</span>
+            <span class="region-pill">🌉 {{ getTranslation('region-list-newwest') }}</span>
+            <span class="region-pill">🛣️ {{ getTranslation('region-list-surrey') }}</span>
+            <span class="region-pill">🏡 {{ getTranslation('region-list-langley') }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pickup-notice-box">
+        <span class="notice-icon">ℹ️</span>
+        <span>{{ getTranslation('region-pickup-notice') }}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing-section">
+    <div class="site-container">
+      <div class="text-center">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>{{ getTranslation('pricing-badge') }}</span>
+        </div>
+        <h2 class="section-title">{{ getTranslation('pricing-title') }}</h2>
+        <p class="section-subtitle">{{ getTranslation('pricing-subtitle') }}</p>
+      </div>
+
+      <div class="pricing-cards-container">
+        <!-- Standard Lesson -->
+        <div class="price-box featured-price">
+          <div class="price-tag-ribbon">Recommended</div>
+          <h3 class="price-plan-name">{{ getTranslation('price-standard-title') }}</h3>
+          <p class="price-plan-desc">{{ getTranslation('price-standard-desc') }}</p>
+
+          <div class="price-figure-wrap">
+            <span class="price-amount">{{ getTranslation('price-standard-rate') }}</span>
+            <span class="price-duration">{{ getTranslation('price-standard-unit') }}</span>
+          </div>
+          <div class="price-minimum-note">
+            {{ getTranslation('price-standard-duration') }}
+          </div>
+
+          <ul class="price-feature-list">
+            <li><span class="p-check">✓</span> {{ getTranslation('price-standard-f1') }}</li>
+            <li><span class="p-check">✓</span> {{ getTranslation('price-standard-f2') }}</li>
+            <li><span class="p-check">✓</span> {{ getTranslation('price-standard-f3') }}</li>
+            <li><span class="p-check">✓</span> {{ getTranslation('price-standard-f4') }}</li>
+          </ul>
+
+          <div class="price-action">
+            <a href="tel:16048167070" class="btn-primary price-btn">
+              <span>{{ getTranslation('call-instructor') }}</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Road Test Package -->
+        <div class="price-box">
+          <h3 class="price-plan-name">{{ getTranslation('price-test-title') }}</h3>
+          <p class="price-plan-desc">{{ getTranslation('price-test-desc') }}</p>
+
+          <div class="price-figure-wrap">
+            <span class="price-amount text-contact">{{ getTranslation('price-test-rate') }}</span>
+            <span class="price-duration">{{ getTranslation('price-test-unit') }}</span>
+          </div>
+          <div class="price-minimum-note">
+            {{ getTranslation('price-test-duration') }}
+          </div>
+
+          <ul class="price-feature-list">
+            <li><span class="p-check">✓</span> {{ getTranslation('price-test-f1') }}</li>
+            <li><span class="p-check">✓</span> {{ getTranslation('price-test-f2') }}</li>
+            <li><span class="p-check">✓</span> {{ getTranslation('price-test-f3') }}</li>
+            <li><span class="p-check">✓</span> {{ getTranslation('price-test-f4') }}</li>
+          </ul>
+
+          <div class="price-action">
+            <a href="https://open.kakao.com/o/sTwi0T4f" target="_blank" rel="noopener" class="btn-kakao price-btn">
+              <span>{{ getTranslation('kakao-chat') }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Guidelines Box -->
+      <div class="pricing-guidelines-box">
+        <h4 class="guidelines-title">{{ getTranslation('price-notes-title') }}</h4>
+        <div class="guidelines-grid">
+          <div class="guideline-item">
+            <span class="g-num">01</span>
+            <p>{{ getTranslation('price-note-1') }}</p>
+          </div>
+          <div class="guideline-item">
+            <span class="g-num">02</span>
+            <p>{{ getTranslation('price-note-2') }}</p>
+          </div>
+          <div class="guideline-item">
+            <span class="g-num">03</span>
+            <p>{{ getTranslation('price-note-3') }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Student Reviews Section -->
+  <section class="reviews-section">
+    <div class="site-container">
+      <div class="text-center">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>{{ getTranslation('reviews-badge') }}</span>
+        </div>
+        <h2 class="section-title">{{ getTranslation('reviews-title') }}</h2>
+        <p class="section-subtitle">{{ getTranslation('reviews-subtitle') }}</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-stars">★★★★★</span>
+            <span class="google-source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+              </svg>
+              <span>Google</span>
+            </span>
+          </div>
+          <p class="review-body">“{{ getTranslation('review1-text') }}”</p>
+          <div class="review-footer">
+            <strong class="review-author">{{ getTranslation('review1-author') }}</strong>
+            <span class="review-pass-badge">{{ getTranslation('review1-badge') }}</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-stars">★★★★★</span>
+            <span class="google-source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+              </svg>
+              <span>Google</span>
+            </span>
+          </div>
+          <p class="review-body">“{{ getTranslation('review2-text') }}”</p>
+          <div class="review-footer">
+            <strong class="review-author">{{ getTranslation('review2-author') }}</strong>
+            <span class="review-pass-badge">{{ getTranslation('review2-badge') }}</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <span class="review-stars">★★★★★</span>
+            <span class="google-source-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
+              </svg>
+              <span>Google</span>
+            </span>
+          </div>
+          <p class="review-body">“{{ getTranslation('review3-text') }}”</p>
+          <div class="review-footer">
+            <strong class="review-author">{{ getTranslation('review3-author') }}</strong>
+            <span class="review-pass-badge">{{ getTranslation('review3-badge') }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Reviews Action Button -->
+      <div class="reviews-action-wrap text-center">
         <a
-          href="https://open.kakao.com/o/sTwi0T4f"
-          aria-label="Kakaotalk"
+          href="https://www.google.com/maps/place/Yes+We+Can+Driving+School/@49.1769446,-122.9867218,11z/data=!4m8!3m7!1s0x8396de7f1328dd15:0x1d183b3a6e376bab!8m2!3d49.1768374!4d-122.8219165!9m1!1b1!16s%2Fg%2F11ld64k_th?entry=ttu"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
+          class="btn-google-reviews"
         >
-          <svg
-            fill="#000000"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            role="img"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22.125 0H1.875C.839 0 0 .84 0 1.875v20.25C0 23.161.84 24 1.875 24h20.25C23.161 24 24 23.16 24 22.125V1.875C24 .839 23.16 0 22.125 0zM12 18.75c-.591 0-1.17-.041-1.732-.12-.562.396-3.813 2.679-4.12 2.722 0 0-.125.049-.232-.014s-.088-.229-.088-.229c.032-.22.843-3.018.992-3.533-2.745-1.36-4.57-3.769-4.57-6.513 0-4.246 4.365-7.688 9.75-7.688s9.75 3.442 9.75 7.688c0 4.245-4.365 7.687-9.75 7.687zM8.05 9.867h-.878v3.342c0 .296-.252.537-.563.537s-.562-.24-.562-.537V9.867h-.878a.552.552 0 0 1 0-1.101h2.88a.552.552 0 0 1 0 1.101zm10.987 2.957a.558.558 0 0 1 .109.417.559.559 0 0 1-.219.37.557.557 0 0 1-.338.114.558.558 0 0 1-.45-.224l-1.319-1.747-.195.195v1.227a.564.564 0 0 1-.562.563.563.563 0 0 1-.563-.563V9.328a.563.563 0 0 1 1.125 0v1.21l1.57-1.57a.437.437 0 0 1 .311-.126c.14 0 .282.061.388.167a.555.555 0 0 1 .165.356.438.438 0 0 1-.124.343l-1.282 1.281 1.385 1.835zm-8.35-3.502c-.095-.27-.383-.548-.75-.556-.366.008-.654.286-.749.555l-1.345 3.541c-.171.53-.022.728.133.8a.857.857 0 0 0 .357.077c.235 0 .414-.095.468-.248l.279-.73h1.715l.279.73c.054.153.233.248.468.248a.86.86 0 0 0 .357-.078c.155-.071.304-.268.133-.8l-1.345-3.54zm-1.311 2.443.562-1.596.561 1.596H9.376zm5.905 1.383a.528.528 0 0 1-.539.516h-1.804a.528.528 0 0 1-.54-.516v-3.82c0-.31.258-.562.575-.562s.574.252.574.562v3.305h1.195c.297 0 .54.231.54.515z"
-            />
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" fill="#FBBC05"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" fill="#EA4335"/>
           </svg>
-          <p i18n>{{ getTranslation("kakaotalk-open-chat") }}</p>
+          <span>{{ getTranslation('view-google-reviews') }}</span>
+          <span class="external-arrow">↗</span>
         </a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section id="faq" class="faq-section">
+    <div class="site-container">
+      <div class="text-center">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>{{ getTranslation('faq-badge') }}</span>
+        </div>
+        <h2 class="section-title">{{ getTranslation('faq-title') }}</h2>
+        <p class="section-subtitle">{{ getTranslation('faq-subtitle') }}</p>
+      </div>
+
+      <div class="faq-accordion-wrap">
+        <!-- Q1 -->
+        <div class="faq-item" [class.open]="isFaqOpen(0)">
+          <button type="button" class="faq-question-btn" (click)="toggleFaq(0)">
+            <span class="faq-q-text">{{ getTranslation('faq-q1') }}</span>
+            <span class="faq-chevron" [class.rotated]="isFaqOpen(0)">▼</span>
+          </button>
+          @if (isFaqOpen(0)) {
+            <div class="faq-answer-panel">
+              <p>{{ getTranslation('faq-a1') }}</p>
+            </div>
+          }
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item" [class.open]="isFaqOpen(1)">
+          <button type="button" class="faq-question-btn" (click)="toggleFaq(1)">
+            <span class="faq-q-text">{{ getTranslation('faq-q2') }}</span>
+            <span class="faq-chevron" [class.rotated]="isFaqOpen(1)">▼</span>
+          </button>
+          @if (isFaqOpen(1)) {
+            <div class="faq-answer-panel">
+              <p>{{ getTranslation('faq-a2') }}</p>
+            </div>
+          }
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item" [class.open]="isFaqOpen(2)">
+          <button type="button" class="faq-question-btn" (click)="toggleFaq(2)">
+            <span class="faq-q-text">{{ getTranslation('faq-q3') }}</span>
+            <span class="faq-chevron" [class.rotated]="isFaqOpen(2)">▼</span>
+          </button>
+          @if (isFaqOpen(2)) {
+            <div class="faq-answer-panel">
+              <p>{{ getTranslation('faq-a3') }}</p>
+            </div>
+          }
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item" [class.open]="isFaqOpen(3)">
+          <button type="button" class="faq-question-btn" (click)="toggleFaq(3)">
+            <span class="faq-q-text">{{ getTranslation('faq-q4') }}</span>
+            <span class="faq-chevron" [class.rotated]="isFaqOpen(3)">▼</span>
+          </button>
+          @if (isFaqOpen(3)) {
+            <div class="faq-answer-panel">
+              <p>{{ getTranslation('faq-a4') }}</p>
+            </div>
+          }
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item" [class.open]="isFaqOpen(4)">
+          <button type="button" class="faq-question-btn" (click)="toggleFaq(4)">
+            <span class="faq-q-text">{{ getTranslation('faq-q5') }}</span>
+            <span class="faq-chevron" [class.rotated]="isFaqOpen(4)">▼</span>
+          </button>
+          @if (isFaqOpen(4)) {
+            <div class="faq-answer-panel">
+              <p>{{ getTranslation('faq-a5') }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner Section -->
+  <section class="cta-banner-section">
+    <div class="site-container">
+      <div class="cta-banner-card">
+        <div class="cta-banner-content">
+          <span class="cta-badge">{{ getTranslation('cta-banner-badge') }}</span>
+          <h2 class="cta-title">{{ getTranslation('cta-banner-title') }}</h2>
+          <p class="cta-subtitle">{{ getTranslation('cta-banner-subtitle') }}</p>
+        </div>
+
+        <div class="cta-banner-buttons">
+          <a href="tel:16048167070" class="btn-primary cta-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445Z"/>
+            </svg>
+            <span>+1 604-816-7070</span>
+          </a>
+
+          <a href="https://open.kakao.com/o/sTwi0T4f" target="_blank" rel="noopener" class="btn-kakao cta-btn">
+            <span>{{ getTranslation('kakao-chat') }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

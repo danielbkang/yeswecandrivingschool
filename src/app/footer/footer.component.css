@@ -1,54 +1,277 @@
-.footer {
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.site-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 4.5rem 0 2rem 0;
+  position: relative;
+  border-top: 1px solid #1e293b;
 }
 
-.footer .available-service-region mat-list {
-  padding: 0;
-}
-
-.footer .social-links-container {
-  padding-top: 32px;
-}
-
-.footer .social-links {
+.footer-inner {
   display: flex;
   flex-direction: column;
-  align-items: left;
-  gap: 0.73rem;
-  margin-top: 1.5rem;
 }
 
-.footer .social-links > * {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Col 1: Brand */
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.footer-brand-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.footer-tagline-text {
+  font-size: 0.925rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0 0 1.5rem 0;
+  max-width: 320px;
+}
+
+.footer-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(47, 180, 87, 0.12);
+  border: 1px solid rgba(47, 180, 87, 0.3);
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.f-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ade80;
+}
+
+/* Titles */
+.footer-col-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.01em;
+}
+
+/* Lists */
+.footer-nav-list,
+.footer-regions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  flex-direction: row;
-  align-items: left;
-  gap: 0.73rem;
-  margin-left: 8px;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.footer .social-links path {
-  transition: fill 0.3s ease;
-  fill: var(--gray-400);
+.footer-nav-list a,
+.footer-link-btn {
+  color: #94a3b8;
+  font-size: 0.925rem;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: inherit;
 }
 
-.footer .social-links a:hover svg path {
-  fill: var(--gray-900);
+.footer-nav-list a:hover,
+.footer-link-btn:hover {
+  color: #ffffff;
+  transform: translateX(3px);
 }
 
-@media screen and (max-width: 650px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
+.footer-regions-list li {
+  font-size: 0.925rem;
+  color: #94a3b8;
+}
+
+/* Col 4: Contact */
+.footer-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.footer-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid #334155;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.footer-contact-link:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.footer-kakao-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--kakao-yellow);
+  color: var(--kakao-text);
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.footer-kakao-link:hover {
+  background-color: var(--kakao-hover);
+  transform: translateY(-1px);
+}
+
+.footer-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-top: 0.25rem;
+}
+
+.meta-label {
+  font-size: 0.775rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.meta-val {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  gap: 1rem;
+}
+
+.copyright-text {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.btn-scroll-top {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.btn-scroll-top:hover {
+  color: #ffffff;
+  background-color: #334155;
+}
+
+/* Mobile Sticky Bottom Bar */
+.mobile-sticky-contact-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-subtle);
+  padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px)) 1rem;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  gap: 0.75rem;
+}
+
+.sticky-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.sticky-call {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+.sticky-kakao {
+  background-color: var(--kakao-yellow);
+  color: var(--kakao-text);
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
 }
 
-.divider {
-  height: 1px;
-  width: 100%;
-  background: var(--primary-green);
-  margin-block: 1.5rem;
+@media screen and (max-width: 600px) {
+  .site-footer {
+    padding-bottom: 5.5rem; /* space for mobile sticky bar */
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobile-sticky-contact-bar {
+    display: flex;
+  }
 }
