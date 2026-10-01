@@ -30,4 +30,13 @@ export class HomeComponent {
   getList(key: string): string[] {
     return this.translationService.getList(key);
   }
+
+  scrollTo(sectionId: string): void {
+    if (typeof document !== 'undefined') {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
 }

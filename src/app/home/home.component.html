@@ -33,9 +33,9 @@
             <span>{{ getTranslation('hero-cta-kakao') }}</span>
           </a>
 
-          <a href="#pricing" class="btn-secondary hero-btn">
+          <button type="button" (click)="scrollTo('pricing')" class="btn-secondary hero-btn">
             <span>{{ getTranslation('hero-cta-pricing') }}</span>
-          </a>
+          </button>
         </div>
 
         <div class="hero-quick-features">
@@ -62,7 +62,7 @@
               <circle cx="10.6821" cy="10.5586" r="9.81396" fill="#2FB457" />
               <path d="M2.93555 3.65771H6.89383L10.7052 10.8561H10.8684L14.6798 3.65771H18.6381L12.5415 14.4634V20.3723H9.03212V14.4634L2.93555 3.65771Z" fill="white" />
             </svg>
-            <span class="badge-text">ICBC Certified</span>
+            <span class="badge-text">ICBC Certified School</span>
           </div>
 
           <div class="visual-main-icon">
@@ -96,7 +96,7 @@
           </div>
 
           <div class="visual-direct-contact">
-            <span class="direct-phone-label">Direct Line / 직접 상담</span>
+            <span class="direct-phone-label">Direct Line / 고객 상담 센터</span>
             <a href="tel:16048167070" class="direct-phone-num">+1 604-816-7070</a>
           </div>
         </div>
@@ -143,7 +143,7 @@
     </div>
   </section>
 
-  <!-- Instructor Spotlight Section -->
+  <!-- Professional Team & Teaching Standards Section -->
   <section id="about" class="instructor-section">
     <div class="site-container">
       <div class="instructor-grid">
@@ -173,17 +173,31 @@
         </div>
 
         <div class="instructor-quote-card">
-          <div class="quote-symbol">“</div>
-          <p class="quote-text">
-            “운전은 단순한 기술이 아니라 평생의 안전 습관입니다. 시험 합격은 물론, 캐나다 도로에서 평생 당당하고 안전하게 운전하실 수 있도록 한 분 한 분 정성을 다해 지도합니다.”
-          </p>
-          <div class="quote-author-info">
-            <div class="author-avatar-badge">
-              <span>YWC</span>
+          <div class="standards-card-header">
+            <span class="standards-badge">Standard of Excellence</span>
+            <h3 class="standards-title">예스위캔 3대 교육 원칙</h3>
+          </div>
+          <div class="standards-list">
+            <div class="standard-item">
+              <span class="s-icon">🛡️</span>
+              <div>
+                <strong>안전 최우선 방어 운전</strong>
+                <p>보조 브레이크 장착 및 위험 요소 선제적 인지 훈련</p>
+              </div>
             </div>
-            <div>
-              <strong class="author-name">ICBC Certified Lead Instructor</strong>
-              <span class="author-title">Yes We Can Driving School</span>
+            <div class="standard-item">
+              <span class="s-icon">🎯</span>
+              <div>
+                <strong>ICBC 최신 코스 집중 트레이닝</strong>
+                <p>포트 코퀴틀람 시험 코스 교차로 및 주차 완전 정복</p>
+              </div>
+            </div>
+            <div class="standard-item">
+              <span class="s-icon">🤝</span>
+              <div>
+                <strong>인내심과 존중의 1:1 코칭</strong>
+                <p>긴장하지 않는 편안한 분위기에서 실력 극대화</p>
+              </div>
             </div>
           </div>
         </div>

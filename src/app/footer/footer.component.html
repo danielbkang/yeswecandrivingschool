@@ -35,10 +35,10 @@
         <ul class="footer-nav-list">
           <li><a routerLink="/home">{{ getTranslation('nav-home') }}</a></li>
           <li><a routerLink="/about">{{ getTranslation('nav-about') }}</a></li>
-          <li><a routerLink="/pricing">{{ getTranslation('nav-pricing') }}</a></li>
-          <li><a routerLink="/home" fragment="courses">{{ getTranslation('nav-courses') }}</a></li>
-          <li><a routerLink="/home" fragment="regions">{{ getTranslation('nav-regions') }}</a></li>
-          <li><a routerLink="/home" fragment="faq">{{ getTranslation('nav-faq') }}</a></li>
+          <li><a (click)="scrollToSection('courses')" class="footer-link-btn">{{ getTranslation('nav-courses') }}</a></li>
+          <li><a (click)="scrollToSection('pricing')" class="footer-link-btn">{{ getTranslation('nav-pricing') }}</a></li>
+          <li><a (click)="scrollToSection('regions')" class="footer-link-btn">{{ getTranslation('nav-regions') }}</a></li>
+          <li><a (click)="scrollToSection('faq')" class="footer-link-btn">{{ getTranslation('nav-faq') }}</a></li>
         </ul>
       </div>
 
