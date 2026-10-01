@@ -1,63 +1,115 @@
-<div class="divider" role="separator" aria-label="Divider"></div>
+<footer class="site-footer">
+  <div class="site-container footer-inner">
+    <div class="footer-grid">
+      <!-- Col 1: Brand Info -->
+      <div class="footer-col brand-col">
+        <a routerLink="/home" class="footer-brand-link" aria-label="Yes We Can Driving School Home">
+          <svg
+            width="38"
+            height="38"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="footer-logo-mark"
+          >
+            <circle cx="10.6821" cy="10.5586" r="9.81396" fill="#2FB457" />
+            <path
+              d="M2.93555 3.65771H6.89383L10.7052 10.8561H10.8684L14.6798 3.65771H18.6381L12.5415 14.4634V20.3723H9.03212V14.4634L2.93555 3.65771Z"
+              fill="white"
+            />
+          </svg>
 
-<div class="footer">
-  <div class="available-service-region-container">
-    <div class="title-container">
-      <h2 i18n>{{ getTranslation("available-service-region") }}</h2>
+          <span class="footer-brand-title">Yes We Can</span>
+        </a>
+        <p class="footer-tagline-text">{{ getTranslation('footer-desc') }}</p>
+
+        <div class="footer-badge-item">
+          <span class="f-badge-dot"></span>
+          <span>{{ getTranslation('hero-badge') }}</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links -->
+      <div class="footer-col links-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-nav-list">
+          <li><a routerLink="/home">{{ getTranslation('nav-home') }}</a></li>
+          <li><a routerLink="/about">{{ getTranslation('nav-about') }}</a></li>
+          <li><a routerLink="/pricing">{{ getTranslation('nav-pricing') }}</a></li>
+          <li><a routerLink="/home" fragment="courses">{{ getTranslation('nav-courses') }}</a></li>
+          <li><a routerLink="/home" fragment="regions">{{ getTranslation('nav-regions') }}</a></li>
+          <li><a routerLink="/home" fragment="faq">{{ getTranslation('nav-faq') }}</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Service Areas -->
+      <div class="footer-col regions-col">
+        <h4 class="footer-col-title">{{ getTranslation('region-badge') }}</h4>
+        <ul class="footer-regions-list">
+          <li>Coquitlam (Tri-Cities)</li>
+          <li>Port Coquitlam (ICBC Test Centre)</li>
+          <li>Port Moody</li>
+          <li>Burnaby & New Westminster</li>
+          <li>Surrey & Langley</li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Hours -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-col-title">{{ getTranslation('footer-contact-title') }}</h4>
+        <div class="footer-contact-items">
+          <a href="tel:16048167070" class="footer-contact-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445Z"/>
+            </svg>
+            <span>+1 604-816-7070</span>
+          </a>
+
+          <a href="https://open.kakao.com/o/sTwi0T4f" target="_blank" rel="noopener" class="footer-kakao-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.828 1.83 5.308 4.606 6.745-.203.743-.733 2.695-.839 3.109-.131.512.188.505.396.367.164-.109 2.59-1.745 3.633-2.457.712.104 1.447.16 2.204.16 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
+            </svg>
+            <span>{{ getTranslation('kakao-chat') }}</span>
+          </a>
+
+          <div class="footer-meta-item">
+            <span class="meta-label">{{ getTranslation('footer-hours-label') }}:</span>
+            <span class="meta-val">{{ getTranslation('footer-hours-val') }}</span>
+          </div>
+
+          <div class="footer-meta-item">
+            <span class="meta-label">{{ getTranslation('footer-location-label') }}:</span>
+            <span class="meta-val">{{ getTranslation('footer-location-val') }}</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="available-service-region">
-      <mat-list class="list" role="list">
-        <mat-list-item role="listitem"
-          >Coquitlam (Tri-Cities area)</mat-list-item
-        >
-        <mat-list-item role="listitem">Burnaby</mat-list-item>
-        <mat-list-item role="listitem">New Westminster</mat-list-item>
-        <mat-list-item role="listitem">Surrey</mat-list-item>
-        <mat-list-item role="listitem">Langley</mat-list-item>
-      </mat-list>
+
+    <!-- Bottom Copyright -->
+    <div class="footer-bottom">
+      <p class="copyright-text">
+        © 2026 Yes We Can Driving School. {{ getTranslation('footer-rights') }}
+      </p>
+      <button type="button" class="btn-scroll-top" (click)="scrollToTop()" aria-label="Scroll to top">
+        ↑ Top
+      </button>
     </div>
   </div>
-  <div class="social-links-container">
-    <div class="title-container">
-      <h2 i18n>{{ getTranslation("contactus") }}</h2>
-    </div>
-    <div class="social-links">
-      <a href="tel:16048167070">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="#000000"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445Z"
-          />
-        </svg>
-        <p i18n>+1 604-816-7070</p>
-      </a>
-      <a
-        href="https://open.kakao.com/o/sTwi0T4f"
-        aria-label="Kakaotalk"
-        target="_blank"
-        rel="noopener"
-      >
-        <svg
-          fill="#000000"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M22.125 0H1.875C.839 0 0 .84 0 1.875v20.25C0 23.161.84 24 1.875 24h20.25C23.161 24 24 23.16 24 22.125V1.875C24 .839 23.16 0 22.125 0zM12 18.75c-.591 0-1.17-.041-1.732-.12-.562.396-3.813 2.679-4.12 2.722 0 0-.125.049-.232-.014s-.088-.229-.088-.229c.032-.22.843-3.018.992-3.533-2.745-1.36-4.57-3.769-4.57-6.513 0-4.246 4.365-7.688 9.75-7.688s9.75 3.442 9.75 7.688c0 4.245-4.365 7.687-9.75 7.687zM8.05 9.867h-.878v3.342c0 .296-.252.537-.563.537s-.562-.24-.562-.537V9.867h-.878a.552.552 0 0 1 0-1.101h2.88a.552.552 0 0 1 0 1.101zm10.987 2.957a.558.558 0 0 1 .109.417.559.559 0 0 1-.219.37.557.557 0 0 1-.338.114.558.558 0 0 1-.45-.224l-1.319-1.747-.195.195v1.227a.564.564 0 0 1-.562.563.563.563 0 0 1-.563-.563V9.328a.563.563 0 0 1 1.125 0v1.21l1.57-1.57a.437.437 0 0 1 .311-.126c.14 0 .282.061.388.167a.555.555 0 0 1 .165.356.438.438 0 0 1-.124.343l-1.282 1.281 1.385 1.835zm-8.35-3.502c-.095-.27-.383-.548-.75-.556-.366.008-.654.286-.749.555l-1.345 3.541c-.171.53-.022.728.133.8a.857.857 0 0 0 .357.077c.235 0 .414-.095.468-.248l.279-.73h1.715l.279.73c.054.153.233.248.468.248a.86.86 0 0 0 .357-.078c.155-.071.304-.268.133-.8l-1.345-3.54zm-1.311 2.443.562-1.596.561 1.596H9.376zm5.905 1.383a.528.528 0 0 1-.539.516h-1.804a.528.528 0 0 1-.54-.516v-3.82c0-.31.258-.562.575-.562s.574.252.574.562v3.305h1.195c.297 0 .54.231.54.515z"
-          />
-        </svg>
-        <p i18n>{{ getTranslation("kakaotalk-open-chat") }}</p>
-      </a>
-    </div>
+
+  <!-- Mobile Sticky Bottom Contact Bar -->
+  <div class="mobile-sticky-contact-bar">
+    <a href="tel:16048167070" class="sticky-btn sticky-call">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21.384,17.752a2.108,2.108,0,0,1-.522,3.359,7.543,7.543,0,0,1-5.476.642C10.5,20.523,3.477,13.5,2.247,8.614a7.543,7.543,0,0,1,.642-5.476,2.108,2.108,0,0,1,3.359-.522L8.333,4.7a2.094,2.094,0,0,1,.445,2.328A3.877,3.877,0,0,1,8,8.2c-2.384,2.384,5.417,10.185,7.8,7.8a3.877,3.877,0,0,1,1.173-.781,2.092,2.092,0,0,1,2.328.445Z"/>
+      </svg>
+      <span>{{ getTranslation('call-instructor') }}</span>
+    </a>
+
+    <a href="https://open.kakao.com/o/sTwi0T4f" target="_blank" rel="noopener" class="sticky-btn sticky-kakao">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3c-5.523 0-10 3.582-10 8 0 2.828 1.83 5.308 4.606 6.745-.203.743-.733 2.695-.839 3.109-.131.512.188.505.396.367.164-.109 2.59-1.745 3.633-2.457.712.104 1.447.16 2.204.16 5.523 0 10-3.582 10-8s-4.477-8-10-8z"/>
+      </svg>
+      <span>{{ getTranslation('kakao-chat') }}</span>
+    </a>
   </div>
-</div>
+</footer>

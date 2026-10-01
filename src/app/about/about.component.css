@@ -1,9 +1,229 @@
-@media screen and (min-width: 900px) {
-  .about-section {
-    width: 900px;
-  }
+.about-page {
+  width: 100%;
+  background-color: var(--bg-page);
 }
 
-.about-section .container {
-  margin: 64px 0;
+.about-hero-section {
+  padding: 4rem 0 2rem 0;
+  background: radial-gradient(circle at 50% 0%, rgba(47, 180, 87, 0.08) 0%, transparent 60%), #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-content-section {
+  padding: 4rem 0 6rem 0;
+}
+
+.about-two-col-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 2.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.about-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-icon-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.c-icon {
+  font-size: 1.75rem;
+}
+
+.card-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.card-text {
+  font-size: 1.025rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0 0 1.25rem 0;
+}
+
+/* Highlight Card */
+.highlight-card {
+  background: linear-gradient(160deg, #ffffff 0%, var(--primary-soft) 100%);
+  border-color: var(--primary-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.instructor-profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--primary-border);
+  margin-bottom: 1.75rem;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+  box-shadow: 0 4px 14px var(--primary-glow);
+  margin-bottom: 1rem;
+}
+
+.profile-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 0.25rem 0;
+}
+
+.profile-role {
+  font-size: 0.875rem;
+  color: var(--primary-active);
+  font-weight: 700;
+}
+
+.profile-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.p-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.pf-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.p-feature-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 0.15rem;
+}
+
+.p-feature-item p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Why Choose Us Block */
+.why-choose-block {
+  margin-bottom: 4.5rem;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.why-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-md);
+}
+
+.why-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.why-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.5rem 0;
+}
+
+.why-desc {
+  font-size: 0.885rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* CTA Card */
+.about-cta-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: var(--radius-xl);
+  padding: 3.5rem 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.about-cta-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+}
+
+.about-cta-desc {
+  font-size: 1.05rem;
+  color: #94a3b8;
+  line-height: 1.65;
+  margin: 0 0 2rem 0;
+}
+
+.about-cta-btns {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .about-two-col-grid {
+    grid-template-columns: 1fr;
+  }
 }

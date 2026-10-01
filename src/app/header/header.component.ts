@@ -1,33 +1,32 @@
-import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { Component, computed, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslationService } from '../translation.service';
+import { Language, TranslationService } from '../translation.service';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    MatMenuModule,
-    MatIconModule,
-    RouterModule,
-    MatSidenavModule,
-    MatToolbarModule,
-  ],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  constructor(private translationService: TranslationService) {}
+  isMobileMenuOpen = signal<boolean>(false);
 
-  ngOnInit() {
-    this.translationService.setLanguage('ko');
+  readonly currentLang = computed(() => this.translationService.currentLanguage());
+
+  constructor(public translationService: TranslationService) {}
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen.update((open) => !open);
   }
 
-  switchLanguage(language: string): void {
-    this.translationService.setLanguage(language);
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen.set(false);
+  }
+
+  switchLanguage(lang: Language): void {
+    this.translationService.setLanguage(lang);
   }
 
   getTranslation(key: string): string {
