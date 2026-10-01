@@ -36,9 +36,9 @@
       <a routerLink="/home" routerLinkActive="active" class="nav-link">{{ getTranslation('nav-home') }}</a>
       <a routerLink="/about" routerLinkActive="active" class="nav-link">{{ getTranslation('nav-about') }}</a>
       <a routerLink="/pricing" routerLinkActive="active" class="nav-link">{{ getTranslation('nav-pricing') }}</a>
-      <a href="#courses" class="nav-link">{{ getTranslation('nav-courses') }}</a>
-      <a href="#regions" class="nav-link">{{ getTranslation('nav-regions') }}</a>
-      <a href="#faq" class="nav-link">{{ getTranslation('nav-faq') }}</a>
+      <button type="button" (click)="scrollToSection('courses')" class="nav-link">{{ getTranslation('nav-courses') }}</button>
+      <button type="button" (click)="scrollToSection('regions')" class="nav-link">{{ getTranslation('nav-regions') }}</button>
+      <button type="button" (click)="scrollToSection('faq')" class="nav-link">{{ getTranslation('nav-faq') }}</button>
     </nav>
 
     <!-- Header Actions -->
@@ -99,9 +99,9 @@
         <a routerLink="/home" (click)="closeMobileMenu()" class="mobile-link">{{ getTranslation('nav-home') }}</a>
         <a routerLink="/about" (click)="closeMobileMenu()" class="mobile-link">{{ getTranslation('nav-about') }}</a>
         <a routerLink="/pricing" (click)="closeMobileMenu()" class="mobile-link">{{ getTranslation('nav-pricing') }}</a>
-        <a href="#courses" (click)="closeMobileMenu()" class="mobile-link">{{ getTranslation('nav-courses') }}</a>
-        <a href="#regions" (click)="closeMobileMenu()" class="mobile-link">{{ getTranslation('nav-regions') }}</a>
-        <a href="#faq" (click)="closeMobileMenu()" class="mobile-link">{{ getTranslation('nav-faq') }}</a>
+        <button type="button" (click)="scrollToSection('courses')" class="mobile-link">{{ getTranslation('nav-courses') }}</button>
+        <button type="button" (click)="scrollToSection('regions')" class="mobile-link">{{ getTranslation('nav-regions') }}</button>
+        <button type="button" (click)="scrollToSection('faq')" class="mobile-link">{{ getTranslation('nav-faq') }}</button>
       </nav>
 
       <div class="mobile-drawer-actions">

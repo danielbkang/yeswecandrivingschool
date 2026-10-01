@@ -43,18 +43,27 @@ export class HeaderComponent {
       this.router.navigate(['/home']).then(() => {
         setTimeout(() => {
           this.doScroll(sectionId);
-        }, 150);
+        }, 200);
       });
     } else {
       this.doScroll(sectionId);
     }
   }
 
-  private doScroll(sectionId: string): void {
-    if (typeof document !== 'undefined') {
+  private doScroll(sectionId: string, retryCount = 0): void {
+    if (typeof document !== 'undefined' && typeof window !== 'undefined') {
       const el = document.getElementById(sectionId);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+        const offsetPosition = elementPosition + currentScroll - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth',
+        });
+      } else if (retryCount < 5) {
+        setTimeout(() => this.doScroll(sectionId, retryCount + 1), 100);
       }
     }
   }

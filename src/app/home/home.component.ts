@@ -32,10 +32,17 @@ export class HomeComponent {
   }
 
   scrollTo(sectionId: string): void {
-    if (typeof document !== 'undefined') {
+    if (typeof document !== 'undefined' && typeof window !== 'undefined') {
       const el = document.getElementById(sectionId);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const currentScroll = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
+        const offsetPosition = elementPosition + currentScroll - headerOffset;
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth',
+        });
       }
     }
   }
