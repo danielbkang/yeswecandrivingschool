@@ -211,25 +211,32 @@
 /* Mobile Drawer Overlay */
 .mobile-drawer-backdrop {
   position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.45);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(15, 23, 42, 0.55);
   backdrop-filter: blur(4px);
-  z-index: 1001;
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10001;
 }
 
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
   width: min(85vw, 340px);
+  height: 100vh;
+  height: 100dvh;
   background-color: var(--bg-card);
-  box-shadow: var(--shadow-xl);
-  z-index: 1002;
+  box-shadow: -6px 0 28px rgba(15, 23, 42, 0.2);
+  z-index: 10002;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   animation: slideDrawer 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -249,6 +256,7 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-subtle);
   margin-bottom: 1.25rem;
+  flex-shrink: 0;
 }
 
 .drawer-title {
@@ -267,6 +275,9 @@
   align-items: center;
   justify-content: center;
   background-color: var(--bg-subtle);
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 .mobile-nav-links {
@@ -303,6 +314,8 @@
   flex-direction: column;
   gap: 0.85rem;
   margin-top: auto;
+  flex-shrink: 0;
+  padding-top: 1.5rem;
 }
 
 .drawer-btn {
